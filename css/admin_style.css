@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+
+:root {
+    --main-color: #2980b9;
+    --red: #e74c3c;
+    --orange: #f39c12;
+    --black: #444;
+    --white: #fff;
+    --light-bg: #f5f5f5;
+    --light-color: #777;
+    --border: .2rem solid var(--black);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+
+* {
+    font-family: 'Nurito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+
+*::selection {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+
+::-webkit-scrollbar {
+    width: 1rem;
+    height: .5rem;
+}
+
+
+::-webkit-scrollbar-track {
+    background-color: none;   
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);   
+}
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--light-bg);
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+
+
+/* ======= Seção do formulário de login do administrador ======= */
+.form-container { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.form-container form { 
+    background-color: var(--white);
+    border-radius: .5rem;
+    border: var(--border);
+    box-sizing: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    width: 50rem;
+}
+
+.form-container form h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.form-container form p {
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: var(--light-color);
+}
+
+
+
+
+
+
+
+
