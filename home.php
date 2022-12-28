@@ -15,6 +15,9 @@
 		echo "Olá mundo! Sapup3 na Área..."
 	
 	?>
+<!-- ======= Header Section/Seção de Cabeçalho ======= -->
+
+
 
 	
 	<script src="js/script.js"></script>

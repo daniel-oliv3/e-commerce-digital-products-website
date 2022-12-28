@@ -1,29 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Digital Store</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="shortcut icon" href="img/favicon.ico"/>
-</head>
-<body>
+<?php
 
-	<?php
+$db_name = 'mysql:host=localhost;dbname=e-commerce-digital-products-base-dados';
+$user_name = 'root';
+$user_password = '';
 
-		echo "Olá mundo! Sapup3 na Área..."
-	
-	?>
+
+$conn = new PDO($db_name, $user_name, $user_password);
+
 
 	
-	<script src="js/script.js"></script>
-</body>
-</html>
+?>
+
 
 <!--
     Autor: Daniel Oliveira
     Email: danieloliveira.webmaster@gmail.com
     Manaus/Amazonas
-    04/05/2022
+    28/12/2022
 -->
