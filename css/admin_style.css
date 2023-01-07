@@ -62,8 +62,73 @@ section {
 }
 
 
+.btn,
+.delete-btn,
+.option-btn {
+    display: block;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.8rem;
+    color: var(--white);
+    padding: 1rem 3rem;
+    text-transform: capitalize;
+}
 
-/* ======= Seção do formulário de login do administrador ======= */
+.btn {
+    background-color: var(--main-color);
+}
+
+.delete-btn {
+    background-color: var(--red);
+}
+
+.option-btn {
+    background-color: var(--orange);
+}
+
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover {
+    background-color: var(--black);
+}
+
+.flex-btn {
+    display: flex;
+    gap: 1;
+}
+
+.message {
+    position: sticky;
+    top: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--light-bg);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.message span {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.message i {
+    font-size: 2.5rem;
+    color: var(--red);
+    cursor: pointer;
+}
+
+.message i:hover {
+    color: var(--black);
+}
+
+
+ /* ======= Seção do formulário de login do administrador ======= */
 .form-container { 
     display: flex;
     align-items: center;
@@ -92,6 +157,81 @@ section {
     font-size: 2rem;
     color: var(--light-color);
 }
+
+.form-container form p span {
+    color: var(--orange);
+}
+
+.form-container form .box {
+    width: 100%;
+    font-size: 1.8rem;
+    color: var(--black);
+    padding: 1.4rem;
+    margin: 1rem 0;
+    background-color: var(--light-bg);
+    border: var(--border);
+    border-radius: .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* ======= Responsive/Responsividade ======= */
+@media(max-width:991px){
+    html {
+        font-size: 55%;
+    }
+}
+
+@media(max-width:450px){
+    html {
+        font-size: 50%;
+    }
+}
+
+@media(max-width:768px){
+    html {
+        font-size: 55%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
