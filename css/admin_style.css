@@ -74,6 +74,7 @@ section {
     color: var(--white);
     padding: 1rem 3rem;
     text-transform: capitalize;
+    text-align: center;
 }
 
 .btn {
@@ -96,7 +97,7 @@ section {
 
 .flex-btn {
     display: flex;
-    gap: 1;
+    gap: 1rem;
 }
 
 .message {
@@ -174,6 +175,72 @@ section {
 }
 
 
+ /* ======= Header Section(dashboard) ======= */
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+
+.header .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header .flex .logo {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.header .flex .logo span {
+    color: var(--main-color);
+}
+
+.header .flex .navbar a {
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: var(--light-color);
+}
+
+.header .flex .navbar a:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.header .flex .icons > * {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--light-color);
+    margin-left: 1.7rem;
+}
+
+.header .flex .icons > *:hover {
+    color: var(--main-color);
+}
+
+.header .flex .profile {
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    background-color: var(--white);
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 2rem;
+    padding-top: 1rem;
+}
+
+.header .flex .profile p {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--black);
+}
 
 
 
@@ -193,13 +260,14 @@ section {
     html {
         font-size: 50%;
     }
-}
 
-@media(max-width:768px){
-    html {
-        font-size: 55%;
+    .flex-btn {
+        flex-flow: column;
+        gap: 0;
     }
 }
+
+
 
 
 
