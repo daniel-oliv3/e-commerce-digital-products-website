@@ -226,13 +226,22 @@ section {
 
 .header .flex .profile {
     position: absolute;
-    top: 120%;
+    top: 125%;
     right: 2rem;
     background-color: var(--white);
     border: var(--border);
     border-radius: .5rem;
     padding: 2rem;
     padding-top: 1rem;
+    width: 30rem;
+    display: none;
+    animation: fadeIn .2s linear;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(1rem);
+    }
 }
 
 .header .flex .profile p {
@@ -242,6 +251,13 @@ section {
     color: var(--black);
 }
 
+.header .flex .profile.active{
+    display: inline-block;
+}
+
+#menu-btn {
+    display: none;
+}
 
 
 

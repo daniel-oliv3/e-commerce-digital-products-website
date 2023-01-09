@@ -18,8 +18,8 @@ if(isset($message)){
 			<a href="dashboard.php">Inicio</a>
 			<a href="products.php">Produtos</a>
 			<a href="placed_orders.php">Pedidos</a>
-			<a href="admin_accounts.php">Contas adm</a>
-			<a href="user_accounts.php">Contas usuário</a>
+			<a href="admin_accounts.php">Administradores</a>
+			<a href="user_accounts.php">Usuários</a>
 			<a href="messages.php">Mensagens</a>
 		</nav>
 		<div class="icons">

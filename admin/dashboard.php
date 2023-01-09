@@ -28,7 +28,7 @@ if(!isset($admin_id)){
 <?php include '../components/admin_header.php' ?>
 
 
-	<script src="js/amin_script.js"></script>
+	<script src="../js/admin_script.js"></script>
 </body>
 </html>
 
