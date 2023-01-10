@@ -38,7 +38,7 @@
 
 
 ::-webkit-scrollbar-track {
-    background-color: none;   
+    background-color: transparent;   
 }
 
 ::-webkit-scrollbar-thumb {
@@ -61,6 +61,14 @@ section {
     padding: 2rem;
 }
 
+.heading{
+    font-size: 4rem;
+    color:var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+ 
 
 .btn,
 .delete-btn,
@@ -77,6 +85,13 @@ section {
     text-align: center;
 }
 
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover {
+    background-color: var(--black);
+}
+
+
 .btn {
     background-color: var(--main-color);
 }
@@ -89,11 +104,6 @@ section {
     background-color: var(--orange);
 }
 
-.btn:hover,
-.delete-btn:hover,
-.option-btn:hover {
-    background-color: var(--black);
-}
 
 .flex-btn {
     display: flex;
@@ -109,8 +119,9 @@ section {
     padding: 2rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: space-between;
+    z-index: 1100;
 }
 
 .message span {
@@ -127,6 +138,26 @@ section {
 .message i:hover {
     color: var(--black);
 }
+
+
+.empty{
+    padding:1.5rem;
+    background-color: var(--white);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    color:var(--red);
+    border-radius: .5rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+ }
+
+
+ @keyframes fadeIn {
+     0% {
+         transform: translateY(1rem);
+     }
+ }
 
 
  /* ======= Seção do formulário de login do administrador ======= */
@@ -238,11 +269,6 @@ section {
     animation: fadeIn .2s linear;
 }
 
-@keyframes fadeIn {
-    0% {
-        transform: translateY(1rem);
-    }
-}
 
 .header .flex .profile p {
     margin-bottom: 1rem;
@@ -258,6 +284,44 @@ section {
 #menu-btn {
     display: none;
 }
+
+
+/* ======= Admin dashboard ======= */
+.dashboard .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.dashboard .box-container .box{
+   padding:2rem;
+   text-align: center;
+   border:var(--border);
+   box-shadow: var(--box-shadow);
+   border-radius: .5rem;
+   background-color: var(--white);
+}
+
+.dashboard .box-container .box h3{
+   font-size: 2.7rem;
+   color:var(--black);
+}
+
+.dashboard .box-container .box h3 span{
+   font-size: 2rem;
+}
+
+.dashboard .box-container .box p{
+   padding:1.3rem;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   font-size: 1.7rem;
+   color:var(--light-color);
+   margin:1rem 0;
+}
+
 
 
 
