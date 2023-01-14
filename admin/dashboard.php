@@ -24,7 +24,7 @@ if(!isset($admin_id)){
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
-<!-- ======= DASHBOARD ======= -->
+<!-- ======= dashboard.php ======= -->
 <?php include '../components/admin_header.php' ?>
 
 <!-- ======= Admin dashboard ======= -->
@@ -124,5 +124,5 @@ if(!isset($admin_id)){
     Autor: Daniel Oliveira
     Email: danieloliveira.webmaster@gmail.com
     Manaus/Amazonas
-    08/01/2023
+    14/01/2023
 -->

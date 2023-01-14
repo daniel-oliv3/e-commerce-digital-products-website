@@ -336,6 +336,33 @@ section {
     }
 }
 
+@media(max-width:768px){
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .flex .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        border-top: var(--border);
+        border-bottom: var(--border);
+        background-color: var(--white);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .flex .navbar a {
+        display: block;
+        margin: 2rem;
+    }
+}
+
 @media(max-width:450px){
     html {
         font-size: 50%;
