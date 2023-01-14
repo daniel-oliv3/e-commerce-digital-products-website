@@ -12,7 +12,7 @@
 
 	<?php
 
-		echo "Olá mundo! Sapup3 na Área..."
+		echo "MENSAGEM..."
 	
 	?>
 

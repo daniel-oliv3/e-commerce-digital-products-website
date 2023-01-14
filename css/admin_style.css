@@ -345,6 +345,10 @@ section {
         flex-flow: column;
         gap: 0;
     }
+
+    .heading {
+        font-size: 3rem;
+    }
 }
 
 

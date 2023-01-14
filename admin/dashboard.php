@@ -45,7 +45,7 @@ if(!isset($admin_id)){
 				$total_pendings += $fetch_pendings['total_preco'];
 				}
 			?>
-			<h3><span><?= $total_pendings; ?></span>/-</h3>
+			<h3><span>R$ <?= $total_pendings; ?></span>/-</h3>
 			<p>Total de pendências</p>
 			<a href="placed_orders.php" class="btn">Ver pedidos</a>
 		</div>
@@ -58,7 +58,7 @@ if(!isset($admin_id)){
 				$total_completes += $fetch_completes['total_preco'];
 				}
 			?>
-			<h3><span><?= $total_completes; ?></span>/-</h3>
+			<h3><span>R$ <?= $total_completes; ?></span>/-</h3>
 			<p>Total de concluído</p>
 			<a href="placed_orders.php" class="btn">Ver pedidos</a>
 		</div>
@@ -90,7 +90,7 @@ if(!isset($admin_id)){
 			?>
 			<h3><?= $numbers_of_users; ?></h3>
 			<p>Contas de usuários</p>
-			<a href="orders_accounts.php" class="btn">Ver contas</a>
+			<a href="users_accounts.php" class="btn">Ver contas</a>
 		</div>
 		<div class="box">
 			<?php
@@ -100,7 +100,7 @@ if(!isset($admin_id)){
 			?>
 			<h3><?= $numbers_of_admins; ?></h3>
 			<p>Administradores</p>
-			<a href="admins_accounts.php" class="btn">Ver administradores</a>
+			<a href="admin_accounts.php" class="btn">Ver administradores</a>
 		</div>
 		<div class="box">
 			<?php
