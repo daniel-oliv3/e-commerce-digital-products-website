@@ -38,7 +38,7 @@ if(isset($message)){
 				<a href="admin_login.php" class="option-btn">Login</a>
 				<a href="register_admin.php" class="option-btn">Registro</a>
 			</div>
-			<a href="../components/admin_logout.php" class="delete-btn">Sair</a>
+			<a href="../components/admin_logout.php" onclick="return confirm('Sair deste site?');" class="delete-btn">Sair</a>
 		</div>
 	</section>
 </header>

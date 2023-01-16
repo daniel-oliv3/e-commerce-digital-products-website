@@ -1,3 +1,13 @@
+<?php
+include 'connect.php';
+
+session_start();
+session_unset();
+session_destroy();
+
+header('location:../admin/admin_login.php');
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,5 +35,5 @@
     Autor: Daniel Oliveira
     Email: danieloliveira.webmaster@gmail.com
     Manaus/Amazonas
-    04/05/2022
+    16/01/2023
 -->

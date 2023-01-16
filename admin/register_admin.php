@@ -27,8 +27,9 @@ if(isset($_POST['submit'])){
 		if($senha != $csenha){
 			$message[] = 'As senhas não são iguais!';
 		}else {
-			$insert_admin = $conn->prepare("INSERT INTO `admins`(name, password) VALUE(?,?)");
-			$insert_admin->execute([$name, $csenha]);
+			$insert_admin = $conn->prepare("INSERT INTO `admins`(nome, senha) VALUES(?,?)");
+			$insert_admin->execute([$nome, $csenha]);
+			$message[] = 'Novo Administrador Registrado!';
 		}
 	}
 
