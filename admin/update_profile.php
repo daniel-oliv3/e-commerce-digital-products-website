@@ -24,8 +24,16 @@ if(!isset($admin_id)){
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
-<!-- ======= update_profile.php ======= -->
-
+<!-- ======= Seção do formulário de atualização de administrador =======  -->
+<section class="form-container">
+	<form action="" method="POST">
+		<h3>Atualizar perfil</h3>
+		<input type="text" name="nome" maxlength="25" required placeholder="Digite seu email" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+		<input type="password" name="senha" maxlength="25" required placeholder="Digite sua senha" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+		<input type="password" name="csenha" maxlength="25" required placeholder="Confirme sua senha" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+		<input type="submit" class="btn" name="submit" value="Atualizar agora">
+	</form>
+</section>
 
 
 	<script src="../js/admin_script.js"></script>
