@@ -10,6 +10,11 @@ if(!isset($admin_id)){
 	header('location:admin_login.php');
 }
 
+
+	
+ 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,13 +30,16 @@ if(!isset($admin_id)){
 </head>
 <body>
 <!-- ======= Seção do formulário de atualização de administrador =======  -->
+<?php include '../components/admin_header.php'; ?>
 <section class="form-container">
 	<form action="" method="POST">
-		<h3>Atualizar perfil</h3>
-		<input type="text" name="nome" maxlength="25" required placeholder="Digite seu email" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-		<input type="password" name="senha" maxlength="25" required placeholder="Digite sua senha" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-		<input type="password" name="csenha" maxlength="25" required placeholder="Confirme sua senha" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-		<input type="submit" class="btn" name="submit" value="Atualizar agora">
+		<h3>Atualizar perfil</h3>		
+		<input type="hidden" name="prev_senha" value="<?= $fetch_profile['senha']; ?>">
+      	<input type="text" name="nome" value="<?= $fetch_profile['nome']; ?>" required placeholder="Digite seu email" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      	<input type="password" name="antiga_senha" placeholder="Digite sua senha antiga" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      	<input type="password" name="nova_senha" placeholder="Digite sua nova senha" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      	<input type="password" name="confirmar_senha" placeholder="Confirmar a nova senha" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      	<input type="submit" value="Atualizar agora" class="btn" name="submit">
 	</form>
 </section>
 
