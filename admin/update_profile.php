@@ -11,9 +11,41 @@ if(!isset($admin_id)){
 }
 
 
+if(isset($_POST['submit'])){
+
+	$nome = $_POST['nome'];
+	$nome = filter_var($nome, FILTER_SANITIZE_STRING);
+ 
+	$update_profile_nome = $conn->prepare("UPDATE `admins` SET nome = ? WHERE id = ?");
+	$update_profile_nome->execute([$nome, $admin_id]);
+ 
+	$senha_vazia = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
+	$prev_senha = $_POST['prev_senha'];
+	$antiga_senha = sha1($_POST['antiga_senha']);
+	$antiga_senha = filter_var($antiga_senha, FILTER_SANITIZE_STRING);
+	$nova_senha = sha1($_POST['nova_senha']);
+	$nova_senha = filter_var($nova_senha, FILTER_SANITIZE_STRING);
+	$confirmar_senha = sha1($_POST['confirmar_senha']);
+	$confirmar_senha = filter_var($confirmar_senha, FILTER_SANITIZE_STRING);
+ 
+	if($antiga_senha == $senha_vazia){
+	   $message[] = 'Por favor digite a senha antiga!';
+	}elseif($antiga_senha != $prev_senha){
+	   $message[] = 'Senha antiga não correspondida!';
+	}elseif($nova_senha != $confirmar_senha){
+	   $message[] = 'Confirme a senha não correspondida!';
+	}else{
+	   if($nova_senha != $senha_vazia){
+		  $update_admin_senha = $conn->prepare("UPDATE `admins` SET senha = ? WHERE id = ?");
+		  $update_admin_senha->execute([$confirmar_senha, $admin_id]);
+		  $message[] = 'Senha atualizada com sucesso!';
+	   }else{
+		  $message[] = 'Por favor digite uma nova senha!';
+	   }
+	}
 	
  
-
+}
 
 ?>
 <!DOCTYPE html>
