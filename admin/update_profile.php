@@ -43,8 +43,6 @@ if(isset($_POST['submit'])){
 		  $message[] = 'Por favor digite uma nova senha!';
 	   }
 	}
-	
- 
 }
 
 ?>
