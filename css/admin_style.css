@@ -337,7 +337,7 @@ section {
 .add-products form .flex {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem
+    gap: 1.5rem
 }
 
 
@@ -362,6 +362,10 @@ section {
     color: var(--light-color)
 }
 
+.add-products form .flex .inputBox textarea {
+    height: 5.8rem;
+    resize: none;
+}
 
 
 

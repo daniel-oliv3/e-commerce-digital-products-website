@@ -10,6 +10,35 @@ if(!isset($admin_id)){
 	header('location:admin_login.php');
 }
 
+if(isset($_POST['add_produto'])){
+
+	$nome = $_POST['nome'];
+	$nome = filter_var($nome, FILTER_SANITIZE_STRING);
+	$preco = $_POST['preco'];
+	$preco = filter_var($preco, FILTER_SANITIZE_STRING);
+	$detalhes = $_POST['detalhes'];
+	$detalhes = filter_var($detalhes, FILTER_SANITIZE_STRING);
+
+	$imagem_01 = $_FILES['imagem_01']['name'];
+	$imagem_01 = filter_var($imagem_01, FILTER_SANITIZE_STRING);
+	$imagem_01_size = $_FILES['imagem_01']['size'];
+	$imagem_01_tmp_name = $_FILES['imagem_01']['tmp_name'];
+	$imagem_01_folder = '../uploaded_img/' .$imagem_01;
+
+	$imagem_02 = $_FILES['imagem_02']['name'];
+	$imagem_02 = filter_var($imagem_02, FILTER_SANITIZE_STRING);
+	$imagem_02_size = $_FILES['imagem_02']['size'];
+	$imagem_02_tmp_name = $_FILES['imagem_02']['tmp_name'];
+	$imagem_02_folder = '../uploaded_img/' .$imagem_02;
+
+	$imagem_03 = $_FILES['imagem_03']['name'];
+	$imagem_03 = filter_var($imagem_03, FILTER_SANITIZE_STRING);
+	$imagem_03_size = $_FILES['imagem_03']['size'];
+	$imagem_03_tmp_name = $_FILES['imagem_03']['tmp_name'];
+	$imagem_03_folder = '../uploaded_img/' .$imagem_03;
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
