@@ -117,9 +117,9 @@ if(isset($_POST['add_produto'])){
 		?>
 		<div class="box">
 			<img src="../uploaded_img/<?= $buscar_produtos['imagem_01']; ?>">
-			<div class="nome"><?= $buscar_produtos['nome']?></div>
+			<div class="name"><?= $buscar_produtos['nome']?></div>
 			<div class="detalhes"><?= $buscar_produtos['detalhes']?></div>
-			<div class="preco"><?= $buscar_produtos['preco']?></div>
+			<div class="preco">R$ <?= $buscar_produtos['preco']?></div>
 			<div class="flex-btn">
 				<a href="update_product.php?update=<?= $buscar_produtos['id']; ?>" class="option-btn">Atualizar</a>
 				<a href="update_product.php?delete=<?= $buscar_produtos['id']; ?>" class="delete-btn" onclick="return confirm('Excluir este produto?'); ">Deletar</a>
