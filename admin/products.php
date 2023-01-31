@@ -106,6 +106,37 @@ if(isset($_POST['add_produto'])){
 </section>
 
 
+<!-- ======= Show products section ======= -->
+<section class="show-products">
+	<div class="box-container">
+		<?php
+			$mostrar_produtos = $conn->prepare("SELECT * FROM `products`");
+			$mostrar_produtos->execute();
+			if($mostrar_produtos->rowCount() > 0){
+				while($buscar_produtos = $mostrar_produtos->fetch(PDO::FETCH_ASSOC)){
+		?>
+		<div class="box">
+			<img src="../uploaded_img/<?= $buscar_produtos['imagem_01']; ?>">
+			<div class="nome"><?= $buscar_produtos['nome']?></div>
+			<div class="detalhes"><?= $buscar_produtos['detalhes']?></div>
+			<div class="preco"><?= $buscar_produtos['preco']?></div>
+			<div class="flex-btn">
+				<a href="update_product.php?update=<?= $buscar_produtos['id']; ?>" class="option-btn">Atualizar</a>
+				<a href="update_product.php?delete=<?= $buscar_produtos['id']; ?>" class="delete-btn" onclick="return confirm('Excluir este produto?'); ">Deletar</a>
+			</div>
+		</div>
+		<?php
+				} 
+			}else {
+				echo '<p class="empty">Nenhum produto adicionado ainda!</p>';
+			}
+		?>
+	</div>
+</section>
+
+
+
+
 
 	<script src="../js/admin_script.js"></script>
 </body>
