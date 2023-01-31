@@ -36,9 +36,25 @@ if(isset($_POST['add_produto'])){
 	$imagem_03_size = $_FILES['imagem_03']['size'];
 	$imagem_03_tmp_name = $_FILES['imagem_03']['tmp_name'];
 	$imagem_03_folder = '../uploaded_img/' .$imagem_03;
+
+	$selecionar_produto = $conn->prepare("SELECT * FROM `products` WHERE nome = ?");
+	$selecionar_produto->execute([$nome]);
+
+	if($selecionar_produto->rowCount() > 0){
+		$message[] = 'O nome do produto já existe';
+	} else {		
+		if($imagem_01_size > 2000000 OR $imagem_02_size > 2000000 OR $imagem_03_size > 2000000){
+			$message[] = 'O tamanho da imagem é muito grande';
+		} else {
+			move_uploaded_file($imagem_01_tmp_name, $imagem_01_folder);
+			move_uploaded_file($imagem_02_tmp_name, $imagem_02_folder);
+			move_uploaded_file($imagem_03_tmp_name, $imagem_03_folder);
+			$inserir_produto = $conn->prepare("INSERT INTO `products`(nome, detalhes, preco, imagem_01, imagem_02, imagem_03) VALUES(?,?,?,?,?,?)");
+			$inserir_produto->execute([$nome, $detalhes, $preco, $imagem_01, $imagem_02, $imagem_03]);
+			$message[] = 'Novo produto adicionado!';
+		}
+	}
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -57,9 +73,7 @@ if(isset($_POST['add_produto'])){
 <?php include '../components/admin_header.php' ?>
 
 <section class="add-products">
-
 	<h1 class="heading">Adicionar produto</h1>
-
 	<form action="" method="POST" enctype="multipart/form-data">
 		<div class="flex">
 			<div class="inputBox">
@@ -93,17 +107,6 @@ if(isset($_POST['add_produto'])){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 	<script src="../js/admin_script.js"></script>
 </body>
 </html>
@@ -112,5 +115,5 @@ if(isset($_POST['add_produto'])){
     Autor: Daniel Oliveira
     Email: danieloliveira.webmaster@gmail.com
     Manaus/Amazonas
-    30/01/2023
+    31/01/2023
 -->
