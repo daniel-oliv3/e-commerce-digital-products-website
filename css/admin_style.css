@@ -323,6 +323,49 @@ section {
 }
 
 
+/* ======= Products ADD Section ======= */
+.add-products form {
+    margin: 0 auto;
+    max-width: 70rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem;
+}
+
+.add-products form .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem
+}
+
+
+.add-products form .flex .inputBox {
+    flex: 1 1 30rem;
+}
+
+.add-products form .flex .inputBox .box {
+    width: 100%;
+    background-color: var(--light-bg);
+    border: var(--border);
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    border-radius: .5rem;
+    margin-top: 1rem;
+}
+
+
+.add-products form .flex .inputBox span {
+    font-size: 2rem;
+    color: var(--light-color)
+}
+
+
+
+
+
 
 
 

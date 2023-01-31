@@ -24,10 +24,13 @@ if(!isset($admin_id)){
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
-<!-- ======= Products Section ======= -->
+<!-- ======= Products ADD Section ======= -->
 <?php include '../components/admin_header.php' ?>
 
 <section class="add-products">
+
+	<h1 class="heading">Adicionar produto</h1>
+
 	<form action="" method="POST" enctype="multipart/form-data">
 		<div class="flex">
 			<div class="inputBox">
@@ -52,8 +55,9 @@ if(!isset($admin_id)){
 			</div>
 			<div class="inputBox">
 				<span>Detalhes do produto</span>
-				<textarea name="detalhes" class="box" cols="30" rows="10" required></textarea>
+				<textarea name="detalhes" class="box" placeholder="Insira os detalhes do produto" cols="30" rows="10" required maxlength="500"></textarea>
 			</div>
+			<input type="submit" value="Adicionar produto" name="add_produto" class="btn">
 		</div>
 	</form>
 </section>
