@@ -55,6 +55,24 @@ if(isset($_POST['add_produto'])){
 		}
 	}
 }
+
+if(isset($_GET['delete'])){
+	$delete_id = $_GET['delete'];
+	$delete_produto_imagem = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+	$delete_produto_imagem->execute([$delete_id]);
+	$buscar_delete_imagem = $delete_produto_imagem->fetch(PDO::FETCH_ASSOC);
+	unlink('../uploaded_img/' . $buscar_delete_imagem['imagem_01']);
+	unlink('../uploaded_img/' . $buscar_delete_imagem['imagem_02']);
+	unlink('../uploaded_img/' . $buscar_delete_imagem['imagem_03']);
+	$delete_produto = $conn->prepare("DELETE FROM `products` WHERE id = ?");
+	$delete_produto->execute([$delete_id]);
+	$delete_carrinho = $conn->prepare("DELETE FROM `cart` WHERE pid = ?");
+	$delete_carrinho->execute([$delete_id]);
+	$delete_lista_de_desejo = $conn->prepare("DELETE FROM `wishlist` WHERE pid = ?");
+	$delete_lista_de_desejo->execute([$delete_id]);
+	header('location:products.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -122,7 +140,7 @@ if(isset($_POST['add_produto'])){
 			<div class="preco">R$ <?= $buscar_produtos['preco']?></div>
 			<div class="flex-btn">
 				<a href="update_product.php?update=<?= $buscar_produtos['id']; ?>" class="option-btn">Atualizar</a>
-				<a href="update_product.php?delete=<?= $buscar_produtos['id']; ?>" class="delete-btn" onclick="return confirm('Excluir este produto?'); ">Deletar</a>
+				<a href="products.php?delete=<?= $buscar_produtos['id']; ?>" class="delete-btn" onclick="return confirm('Excluir este produto?'); ">Deletar</a>
 			</div>
 		</div>
 		<?php
