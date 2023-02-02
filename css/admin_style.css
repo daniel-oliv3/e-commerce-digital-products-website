@@ -475,6 +475,10 @@ section {
     .heading {
         font-size: 3rem;
     }
+
+    .show-products .box-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 

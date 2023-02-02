@@ -25,7 +25,7 @@ if(!isset($admin_id)){
 </head>
 <body>
 <!-- ======= update_products.php ======= -->
-
+<?php include('../components/admin_header.php') ?>
 
 
 	<script src="../js/admin_script.js"></script>
