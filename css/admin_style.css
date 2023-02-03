@@ -206,7 +206,7 @@ section {
 }
 
 
- /* ======= Header Section(dashboard) ======= */
+ /* ======= Header Section(Dashboard) ======= */
 .header {
     position: sticky;
     top: 0;
@@ -286,7 +286,7 @@ section {
 }
 
 
-/* ======= Admin dashboard ======= */
+/* ======= Admin Dashboard ======= */
 .dashboard .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
@@ -368,7 +368,7 @@ section {
 }
 
 
-/* ======= Show products section ======= */
+/* ======= Show Products Section ======= */
 .show-products .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, 33rem);
@@ -409,7 +409,7 @@ section {
 }
 
 
-
+/* ======= Update Products Section ======= */
 
 
 

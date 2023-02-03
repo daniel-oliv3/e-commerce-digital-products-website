@@ -24,8 +24,32 @@ if(!isset($admin_id)){
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
-<!-- ======= update_products.php ======= -->
+<!-- ======= Update Products Section ======= -->
 <?php include('../components/admin_header.php') ?>
+
+<section class="update-product">
+	<?php
+		$update_id = $_GET['update'];
+		$mostrar_produtos = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+		$mostrar_produtos->execute([$update_id]);
+		if($mostrar_produtos->rowCount() > 0){
+			while($buscar_produtos = $mostrar_produtos->fetch(PDO::FETCH_ASSOC)){
+	?>
+	<form action="" method="POST" enctype="multipart/form-data">
+		<div class="image-container">
+			<div class="main-image">
+				<img src="../uploaded_img/<?= $buscar_produtos['imagem_01']; ?>">
+			</div>
+		</div>
+	</form>
+
+	<?php
+		} 
+		}else {
+			echo '<p class="empty">Nenhum produto adicionado ainda!</p>';
+		}
+	?>
+</section>
 
 
 	<script src="../js/admin_script.js"></script>
@@ -36,5 +60,5 @@ if(!isset($admin_id)){
     Autor: Daniel Oliveira
     Email: danieloliveira.webmaster@gmail.com
     Manaus/Amazonas
-    14/01/2023
+    03/02/2023
 -->
